@@ -1,0 +1,43 @@
+PODS:
+  - AlivcConan (1.0.3):
+    - AlivcConan/AlivcConan (= 1.0.3)
+  - AlivcConan/AlivcConan (1.0.3)
+  - AliyunVideoSDKBasic (3.16.0)
+  - Flutter (1.0.0)
+  - MBProgressHUD (1.2.0)
+  - QuCore-ThirdParty (3.15.0)
+  - short_video_plugin (0.0.1):
+    - AlivcConan (= 1.0.3)
+    - AliyunVideoSDKBasic (= 3.16.0)
+    - Flutter
+    - MBProgressHUD
+    - QuCore-ThirdParty (= 3.15.0)
+
+DEPENDENCIES:
+  - Flutter (from `Flutter`)
+  - short_video_plugin (from `.symlinks/plugins/short_video_plugin/ios`)
+
+SPEC REPOS:
+  trunk:
+    - AlivcConan
+    - AliyunVideoSDKBasic
+    - MBProgressHUD
+    - QuCore-ThirdParty
+
+EXTERNAL SOURCES:
+  Flutter:
+    :path: Flutter
+  short_video_plugin:
+    :path: ".symlinks/plugins/short_video_plugin/ios"
+
+SPEC CHECKSUMS:
+  AlivcConan: afb3f657f23ae8476789deca6f14236f4cdd5d54
+  AliyunVideoSDKBasic: 714432110b425d5ffe2eea52c60cce262c3a6c7c
+  Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
+  MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
+  QuCore-ThirdParty: f3c49341745bd366e8557a8994407cbbda5c1c44
+  short_video_plugin: 114479d397cbab29a69567f7d3fcb2fe65e39b2d
+
+PODFILE CHECKSUM: aafe91acc616949ddb318b77800a7f51bffa2a4c
+
+COCOAPODS: 1.10.1
