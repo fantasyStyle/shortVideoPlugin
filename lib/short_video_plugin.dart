@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 class ShortVideoPlugin {
@@ -18,15 +19,18 @@ class ShortVideoPlugin {
   ///
   /// @minDuration 最小时长sec
   /// @maxDuration 最大时长sec
+  /// @path 裁剪视频的原始路径
   ///@recodertype 1录制 2相册导入 3视频裁剪
-  static Future<Map<String, dynamic>> getVideoRecoder(
-      int minDuration, int maxDuration, int recoderType) async {
-    final Map<String, dynamic> result =
-        await _channel.invokeMethod('getVideoRecoder', {
+  static Future getVideoRecoder(
+      int minDuration, int maxDuration, int recoderType,
+      {String path = ''}) async {
+    var result = await _channel.invokeMethod('getVideoRecoder', {
       "minDuration": minDuration,
       "maxDuration": maxDuration,
       "recoderType": recoderType,
+      "path": path
     });
+    // debugPrint('视频录制的结果$result');
     return result;
   }
 }

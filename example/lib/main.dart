@@ -1,6 +1,8 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'dart:async';
-
+import 'package:image_picker/image_picker.dart';
 import 'package:flutter/services.dart';
 import 'package:short_video_plugin/short_video_plugin.dart';
 
@@ -42,9 +44,9 @@ class _MyAppState extends State<MyApp> {
     });
   }
 
-  getVideoRecoder() async {
-    Map<String, dynamic> result =
-        await ShortVideoPlugin.getVideoRecoder(3, 15, 1);
+  getVideoRecoder(minTime, maxTime, type, {String path = ''}) async {
+    var result = await ShortVideoPlugin.getVideoRecoder(minTime, maxTime, type,
+        path: path);
     debugPrint('视频录制的结果$result');
   }
 
@@ -56,16 +58,49 @@ class _MyAppState extends State<MyApp> {
           title: const Text('Plugin example app'),
         ),
         body: Center(
-          child: FlatButton(
+            child: Column(children: <Widget>[
+          FlatButton(
               color: Colors.red,
               textColor: Colors.white,
               onPressed: () async {
-                await getVideoRecoder();
+                await getVideoRecoder(3, 15, 1);
               },
               child: Container(
                 child: Text('短视频录制'),
               )),
-        ),
+          SizedBox(height: 50),
+          FlatButton(
+              color: Colors.red,
+              textColor: Colors.white,
+              onPressed: () async {
+                await getVideoRecoder(3, 15, 2);
+              },
+              child: Container(
+                child: Text('相册选择'),
+              )),
+          SizedBox(height: 50),
+          FlatButton(
+              color: Colors.red,
+              textColor: Colors.white,
+              onPressed: () async {
+                ImagePicker()
+                    .getVideo(source: ImageSource.gallery)
+                    .then((PickedFile file) async {
+                  if (file != null && mounted) {
+                    var result =
+                        await getVideoRecoder(3, 15, 2, path: file.path);
+
+                    if (result != null &&
+                        result['path'] != null &&
+                        result['path'].toString().isNotEmpty) {}
+                  }
+                });
+                await getVideoRecoder(3, 15, 2);
+              },
+              child: Container(
+                child: Text('视频裁剪'),
+              )),
+        ])),
       ),
     );
   }

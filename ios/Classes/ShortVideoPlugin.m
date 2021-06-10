@@ -96,7 +96,6 @@
             [recordViewController setValue:self forKey:@"delegate"];
             recordViewController.videoRecordParam  = videoRecordParam;
             recordViewController.recodertype = recodertype;
-            recordViewController.modalPresentationStyle = UIModalPresentationFullScreen;
             UINavigationController * nav = [[UINavigationController alloc] initWithRootViewController:recordViewController];
             nav.modalPresentationStyle =UIModalPresentationFullScreen;
             [[self getRootVC] presentViewController:nav animated:NO completion:nil];
@@ -119,8 +118,6 @@
 - (void)cropTaskOnProgress:(float)progress {
     NSLog(@"~~~~~progress:%@", @(progress));
     //  NSString *err = [NSString stringWithFormat:@"进度: %f",progress];
-    //  UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"裁剪失败" message:err delegate:nil cancelButtonTitle:@"知道了" otherButtonTitles:nil, nil];
-    //  [alert show];
 }
 
 - (void)cropOnError:(int)error {

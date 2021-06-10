@@ -36,7 +36,7 @@ SPEC CHECKSUMS:
   Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   QuCore-ThirdParty: f3c49341745bd366e8557a8994407cbbda5c1c44
-  short_video_plugin: 114479d397cbab29a69567f7d3fcb2fe65e39b2d
+  short_video_plugin: ef92ab8da322fa5774e6490ce185c4cec400544c
 
 PODFILE CHECKSUM: aafe91acc616949ddb318b77800a7f51bffa2a4c
 

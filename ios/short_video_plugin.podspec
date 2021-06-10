@@ -22,7 +22,7 @@ A new flutter plugin project.
   s.dependency 'MBProgressHUD'
   s.static_framework = true
   s.prefix_header_contents = '#import <UIKit/UIKit.h>', '#import <Foundation/Foundation.h>','#import "AlivcMacro.h"','#import "AliyunVideoSDK.h"','#import <AliyunVideoSDKPro/AliyunVideoSDKPro.h>','#import "AliyunBaseSDK-PrefixHeader.pch"'
-  s.ios.resource_bundle ={'QPSDK'=>'short_video_plugin/ios/Assets/*.png'}
+#  s.ios.resource_bundle ={'QPSDK'=>'short_video_plugin/ios/Assets/*'}
   # Flutter.framework does not contain a i386 slice.
   s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES', 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'i386' }
   s.swift_version = '5.0'
