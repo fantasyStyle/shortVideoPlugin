@@ -18,7 +18,6 @@
 @property (nonatomic,strong)FlutterResult  result;
 @property (nonatomic, strong) AliyunCrop *cutPanel;
 @property (nonatomic,strong)NSString * outputPath;
-@property (nonatomic,strong)NSString * pageChangeStr;//页面跳转url
 @property (nonatomic,assign)CGFloat width;
 @property (nonatomic,assign)CGFloat height;
 @property (nonatomic,strong)FlutterMethodChannel* channel;

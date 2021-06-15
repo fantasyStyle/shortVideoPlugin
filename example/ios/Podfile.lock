@@ -4,6 +4,8 @@ PODS:
   - AlivcConan/AlivcConan (1.0.3)
   - AliyunVideoSDKBasic (3.16.0)
   - Flutter (1.0.0)
+  - image_picker (0.0.1):
+    - Flutter
   - MBProgressHUD (1.2.0)
   - QuCore-ThirdParty (3.15.0)
   - short_video_plugin (0.0.1):
@@ -15,6 +17,7 @@ PODS:
 
 DEPENDENCIES:
   - Flutter (from `Flutter`)
+  - image_picker (from `.symlinks/plugins/image_picker/ios`)
   - short_video_plugin (from `.symlinks/plugins/short_video_plugin/ios`)
 
 SPEC REPOS:
@@ -27,6 +30,8 @@ SPEC REPOS:
 EXTERNAL SOURCES:
   Flutter:
     :path: Flutter
+  image_picker:
+    :path: ".symlinks/plugins/image_picker/ios"
   short_video_plugin:
     :path: ".symlinks/plugins/short_video_plugin/ios"
 
@@ -34,6 +39,7 @@ SPEC CHECKSUMS:
   AlivcConan: afb3f657f23ae8476789deca6f14236f4cdd5d54
   AliyunVideoSDKBasic: 714432110b425d5ffe2eea52c60cce262c3a6c7c
   Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
+  image_picker: 9c3312491f862b28d21ecd8fdf0ee14e601b3f09
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   QuCore-ThirdParty: f3c49341745bd366e8557a8994407cbbda5c1c44
   short_video_plugin: ef92ab8da322fa5774e6490ce185c4cec400544c

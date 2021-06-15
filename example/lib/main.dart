@@ -58,49 +58,52 @@ class _MyAppState extends State<MyApp> {
           title: const Text('Plugin example app'),
         ),
         body: Center(
-            child: Column(children: <Widget>[
-          FlatButton(
-              color: Colors.red,
-              textColor: Colors.white,
-              onPressed: () async {
-                await getVideoRecoder(3, 15, 1);
-              },
-              child: Container(
-                child: Text('短视频录制'),
-              )),
-          SizedBox(height: 50),
-          FlatButton(
-              color: Colors.red,
-              textColor: Colors.white,
-              onPressed: () async {
-                await getVideoRecoder(3, 15, 2);
-              },
-              child: Container(
-                child: Text('相册选择'),
-              )),
-          SizedBox(height: 50),
-          FlatButton(
-              color: Colors.red,
-              textColor: Colors.white,
-              onPressed: () async {
-                ImagePicker()
-                    .getVideo(source: ImageSource.gallery)
-                    .then((PickedFile file) async {
-                  if (file != null && mounted) {
-                    var result =
-                        await getVideoRecoder(3, 15, 2, path: file.path);
+            child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+              FlatButton(
+                  color: Colors.red,
+                  textColor: Colors.white,
+                  onPressed: () async {
+                    await getVideoRecoder(3, 15, 1);
+                  },
+                  child: Container(
+                    child: Text('短视频录制'),
+                  )),
+              SizedBox(height: 50),
+              FlatButton(
+                  color: Colors.red,
+                  textColor: Colors.white,
+                  onPressed: () async {
+                    await getVideoRecoder(3, 15, 2);
+                  },
+                  child: Container(
+                    child: Text('相册选择'),
+                  )),
+              SizedBox(height: 50),
+              FlatButton(
+                  color: Colors.red,
+                  textColor: Colors.white,
+                  onPressed: () async {
+                    ImagePicker()
+                        .getVideo(source: ImageSource.gallery)
+                        .then((PickedFile file) async {
+                      debugPrint('选择的视频路径为${file.path}');
+                      if (file != null && mounted) {
+                        var result =
+                            await getVideoRecoder(3, 15, 3, path: file.path);
 
-                    if (result != null &&
-                        result['path'] != null &&
-                        result['path'].toString().isNotEmpty) {}
-                  }
-                });
-                await getVideoRecoder(3, 15, 2);
-              },
-              child: Container(
-                child: Text('视频裁剪'),
-              )),
-        ])),
+                        if (result != null &&
+                            result['path'] != null &&
+                            result['path'].toString().isNotEmpty) {}
+                      }
+                    });
+                  },
+                  child: Container(
+                    child: Text('视频裁剪'),
+                  )),
+            ])),
       ),
     );
   }
